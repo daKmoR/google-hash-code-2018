@@ -1,5 +1,9 @@
 class RideSolution {
   constructor(input) {
+    if (!input) {
+      this.cars = [];
+      return;
+    }
     const inputRows = input.split('\n').filter(Boolean);
 
     this.cars = inputRows.slice(0).map((carRow) => {
