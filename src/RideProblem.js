@@ -68,7 +68,7 @@ class RideProblem {
             if(car.ride.startedAt === car.ride.startLimit) {
               this.score += this.startBonus;
             }
-            
+
             car.completedRides.push(car.ride.rideId);
             car.ride = null;
           } else {
@@ -134,6 +134,6 @@ class RideProblem {
   }
 }
 
-if(module) {
+if (typeof module === 'object') {
   module.exports = RideProblem;
 }
