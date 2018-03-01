@@ -25,3 +25,6 @@
 ## testing
 /wct.conf.js
 /wct.conf.json
+
+## Out
+/out/
