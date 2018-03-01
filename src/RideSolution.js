@@ -12,6 +12,10 @@ class RideSolution {
   }
 
   toString() {
-    let output = '';
+    let result = [];
+    this.cars.forEach((car, i) => {
+      result.push(`${i+1} ${car.rides.join(' ')}`);
+    });
+    return result.join('\n');
   }
 }
