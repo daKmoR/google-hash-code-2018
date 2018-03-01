@@ -21,6 +21,9 @@ describe('Ride problem', () => {
     expect(problem.rides[0].endCol).to.equal(3);
     expect(problem.rides[0].startLimit).to.equal(2);
     expect(problem.rides[0].endLimit).to.equal(9);
+    expect(problem.rides[0].distance).to.equal(4);
+    expect(problem.rides[1].distance).to.equal(2);
+    expect(problem.rides[2].distance).to.equal(2);
   });
 
 });

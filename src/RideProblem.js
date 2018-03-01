@@ -12,7 +12,7 @@ class RideProblem {
 
     this.rides = inputRows.slice(1).map((rideRow) => {
       const [startRow, startCol, endRow, endCol, startLimit, endLimit] = rideRow.split(' ');
-      return { startRow: +startRow, startCol: +startCol, endRow: +endRow, endCol: +endCol, startLimit: +startLimit, endLimit: +endLimit, };
+      return { startRow: +startRow, startCol: +startCol, endRow: +endRow, endCol: +endCol, startLimit: +startLimit, endLimit: +endLimit, distance: Math.abs(+startCol - +endCol) + Math.abs(+startRow - +endRow)};
     });
   }
 }
