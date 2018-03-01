@@ -1,6 +1,6 @@
 describe('Ride problem', () => {
 
-  it('should extract the correct raw data', function() {
+  it('should extract the correct raw data for the problem', function() {
     const problem = new RideProblem(`3 4 2 3 2 10
 0 0 1 3 2 9
 1 2 1 0 0 9
@@ -26,4 +26,12 @@ describe('Ride problem', () => {
     expect(problem.rides[2].distance).to.equal(2);
   });
 
+  it('should extract the correct raw data for the solution', function() {
+    const solution = new RideSolution(`1 0
+2 2 1`);
+
+    expect(solution.cars[0].rides[0]).to.equal(0);
+    expect(solution.cars[1].rides[0]).to.equal(2);
+    expect(solution.cars[1].rides[1]).to.equal(1);
+  });
 });
