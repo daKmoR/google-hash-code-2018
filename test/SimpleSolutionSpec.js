@@ -5,7 +5,8 @@ describe('Simple Solution', () => {
 1 2 1 0 0 9
 2 0 2 2 0 9
 `);
-    var solution = new SimpleSolution(problem);
-
+    let solution = new SimpleSolution(problem).getSolution();
+    let score = solution.calculateScore(problem, solution);
+    expect(score).to.equal(10);
   });
 });

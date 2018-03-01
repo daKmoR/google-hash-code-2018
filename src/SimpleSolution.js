@@ -1,18 +1,21 @@
 class SimpleSolution {
-  constructor(rideProblem) {
-    // console.log(rideProblem.vehicles);
-    let ridesSorted = rideProblem.rides.slice();
+  constructor(problem) {
+    this.problem = problem;
+  }
+
+  getSolution() {
+    let ridesSorted = this.problem.rides.slice();
     ridesSorted.sort(function(obj1, obj2) {
       return obj1.startLimit - obj2.startLimit;
     });
 
     let solution = new RideSolution();
-    for (let i = 0; i < rideProblem.vehicles; i++) {
+    for (let i = 0; i < this.problem.vehicles; i++) {
       solution.cars[i] = {
         rides: [i]
       };
-      // console.log(k + ':' + rideProblem.rides[k]);
     }
     return solution;
   }
+
 }
