@@ -18,7 +18,7 @@ class PizzaSlicer {
 
     lines.forEach((line, x) => {
       line.split('').forEach((ingredient, y) => {
-        this.grid[x][y] = new Slice(this.grid, x, y, ingredient);
+        this.grid[x][y] = new Slice(x, y, ingredient, this.maxCells);
       });
     });
   }
