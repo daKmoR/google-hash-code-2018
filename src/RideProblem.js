@@ -40,14 +40,13 @@ class RideProblem {
     if(!ride) {
       return;
     } else if(this.step + ride.distance <= ride.endLimit) {
-      return ride;
-      // if (ride.endLimit - ride.distance - this.getDistance(car.row, car.col, ride.startRow, ride.startCol) > this.step) {
-      //   return ride;
-      // } else {
-      //   const targetRide = this.getRide(car);
-      //   this.rideQueue.unshift(ride);
-      //   return targetRide;
-      // }
+      if (this.step + ride.distance + this.getDistance(car.row, ride.startRow, car.col, ride.startCol) <= ride.endLimit) {
+        return ride;
+      } else {
+        const targetRide = this.getRide(car);
+        this.rideQueue.unshift(ride);
+        return targetRide;
+      }
     } else {
       console.log('Ride', ride.rideId, 'has expired');
       return this.getRide(car);
@@ -86,7 +85,7 @@ class RideProblem {
           }
           // console.log('Car', carId, 'got', car.ride && car.ride.rideId);
 
-          car.startStepsRemaining = this.getDistance(car.row, car.col, car.ride.startRow, car.ride.startCol);
+          car.startStepsRemaining = this.getDistance(car.row, car.ride.startRow, car.col, car.ride.startCol);
         }
 
         if (car.ride.startedAt === undefined) {
