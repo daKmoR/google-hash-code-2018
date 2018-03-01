@@ -1,0 +1,27 @@
+## editors
+/.idea
+/.vscode
+
+## system files
+.DS_Store
+
+## npm
+/node_modules/
+/npm-debug.log
+# for now we don't want lock files
+/yarn.lock
+/package-lock.json
+
+## bower
+/bower_components*/
+/bower-*.json
+
+## for our builds
+/lib/
+
+## temp folders
+/.tmp/
+
+## testing
+/wct.conf.js
+/wct.conf.json
