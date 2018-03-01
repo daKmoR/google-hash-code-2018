@@ -6,4 +6,12 @@ class RideSolution {
       return { rides: carRow.split(' ').splice(1).map(Number) }; 
     });
   }
+
+  createBruteForceSolution(input) {
+    return [...Array(input.vehicles).keys()]
+  }
+}
+
+RideSolution.toString() = function() {
+  let output = '';
 }
