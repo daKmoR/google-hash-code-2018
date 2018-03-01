@@ -118,6 +118,9 @@ class RideProblem {
   simulate() {
     for(let step = 0; step < this.stepLimit; step++) {
       this.simulateStep(step);
+      if(step === Math.round(this.stepLimit / 2)) {
+        this.rideQueue = this.rideQueue.sort((a, b) => b.endLimit - a.endLimit);
+      }
     }
     console.log('Done', this.score);
 
