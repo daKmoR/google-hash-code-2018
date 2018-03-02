@@ -25,4 +25,13 @@ describe('Ride problem', () => {
     expect(problem.rides[1].distance).to.equal(2);
     expect(problem.rides[2].distance).to.equal(2);
   });
+
+  it('should give back the highest score for the first problem', function() {
+    const problem = new RideProblem(`3 4 2 3 2 10
+0 0 1 3 2 9
+1 2 1 0 0 9
+2 0 2 2 0 9
+`);
+    expect(problem.calculateScore()).to.equal(10);
+  });
 });
